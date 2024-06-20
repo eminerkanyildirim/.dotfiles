@@ -12,12 +12,6 @@
 # Default Applications
 set $wm_setting_app_compositor       picom
 # Menu Parameters
-#set $wm_color_border_active_bg       #07443c
-#set $wm_color_border_active_fg       #0C5E68
-#set $wm_color_border_inactive_bg     #0C5E67
-#set $wm_color_border_inactive_fg     #D8DEE9
-#set $wm_color_background             #2E3440
-
 set $wm_color_border_active_bg       #0C554E
 set $wm_color_border_active_fg       #FFFFFF
 set $wm_color_border_inactive_bg     #0C2420
