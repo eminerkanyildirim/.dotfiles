@@ -11,7 +11,7 @@
 
 # Default Applications
 set $wm_setting_app_compositor       picom
-set $wm_setting_app_terminal         picom
+set $wm_setting_app_terminal         alacritty
 # Menu Parameters
 set $wm_color_border_active_bg       #0C554E
 set $wm_color_border_active_fg       #FFFFFF
@@ -85,7 +85,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec $wm_setting_app_terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
