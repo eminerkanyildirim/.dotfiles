@@ -1,17 +1,30 @@
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
+vim.opt.clipboard = "unnamedplus" -- use system clipboard
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
+vim.opt.mouse = "a" -- allow the mouse to be used in Nvim
+
+-- Tab
+vim.opt.tabstop = 2 -- number of visual spaces per TAB
+vim.opt.softtabstop = 2 -- number of spacesin tab when editing
+vim.opt.shiftwidth = 2 -- insert 4 spaces on a tab
+vim.opt.expandtab = true -- tabs are spaces, mainly because of python
+
+-- UI config
+vim.opt.number = true -- show absolute number
+vim.opt.relativenumber = true -- add numbers to each line on the left side
+vim.opt.cursorline = true -- highlight cursor line underneath the cursor horizontally
+vim.opt.splitbelow = true -- open new vertical split bottom
+vim.opt.splitright = true -- open new horizontal splits right
+-- vim.opt.termguicolors = true        -- enabl 24-bit RGB color in the TUI
+vim.opt.showmode = false -- we are experienced, wo don't need the "-- INSERT --" mode hint
+
+-- Searching
+vim.opt.incsearch = true -- search as characters are entered
+vim.opt.hlsearch = false -- do not highlight matches
+vim.opt.ignorecase = true -- ignore case in searches by default
+vim.opt.smartcase = true -- but make it case sensitive if an uppercase is entered
+
+vim.opt.shortmess:append("I")
 vim.g.mapleader = " "
-vim.g.background = "light"
-
-vim.opt.swapfile = false
-
--- Navigate vim panes better
-vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
-vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
-vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
-vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
-
-vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
-vim.wo.number = true
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("v", "<leader>ss", ":Silicon<CR>")
+--vim.keymap.set("n", "<F8>", ":w <CR> :!gcc % -o %< && ./%< <CR>")
