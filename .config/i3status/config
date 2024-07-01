@@ -14,6 +14,7 @@ general {
 
 order += "cpu_usage"
 order += "disk /" 
+order +=  "memory"
 order += "wireless wlp7s0" 
 order += "ethernet enp8s0" 
 order += "battery 1" 
@@ -44,15 +45,23 @@ load {
 } 
 
 cpu_usage {
-  format = "CPU: %cpu0 %cpu1 %cpu2 %cpu3"
+  format = "CPU: %cpu0 %cpu1"
   degraded_threshold = 90
   max_threshold = 95
 }
 
+memory {
+  memory_used_method = classical
+  format="%used/%total"
+  }
 time { 
     format = "%Y-%m-%d %H:%M:%S" 
 } 
 
 volume master {
-        device = "pulse"
+    format = "🔊 %volume"
+
+    format_muted = "🔇(%volume)"
+
+    device = "pulse:alsa_output.pci-0000_00_1b.0.analog-stereo" 
 }
