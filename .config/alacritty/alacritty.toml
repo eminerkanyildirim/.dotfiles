@@ -23,4 +23,7 @@ background = "0x1e242f"
 foreground = "0xC6C6C4"
 
 [font]
-size = 9.0
+size = 7.0
+normal = { family = "0xProto Nerd Font"}
+
+
